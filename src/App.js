@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="app">
       {
-        stateArticle.articles.map(article => <Card title={article.title} body={article.body} />)
+        stateArticle.articles.map(article => <Card key={article.id} title={article.title} body={article.body} />)
       }
   </div>
   );

@@ -54,7 +54,13 @@ class App extends React.Component {
         {this.state.loading
           ? <div>loading ...</div>
           : null}
-        <button style={BtnStyle} onClick={this.loadMore}>load more</button>
+        <button style={BtnStyle} 
+        onClick={this.loadMore} 
+        onMouseEnter={(e)=>} 
+        onMouseLeave={}
+        >
+          load more
+          </button>
       </div>
     );
   }

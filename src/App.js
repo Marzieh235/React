@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Card from './components/Card';
 import Carousel from 'react-bootstrap/Carousel';
-
+import ErrorBoundary from './components/errors/ErrorBoundary';
 
 class App extends React.Component {
   state = {
@@ -49,7 +49,7 @@ class App extends React.Component {
   }
 
   render() {
-    let articleList = this.state.articles.map((article, index) => article.active ? <Card key={index} title={article.title} body={article.body} /> : null)
+    let articleList = this.state.articles.map((article, index) => article.active ? <ErrorBoundary><Card key={index} title={article.title} body={article.body} /></ErrorBoundary> : null)
 
     return (
       <div className="app">

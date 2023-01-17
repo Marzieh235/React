@@ -4,12 +4,13 @@ import './Card.css'
 class Card extends Component {
 
 
-    eventHandler(e){
+    eventHandler(e) {
         console.log(this)
         console.log('click')
     }
     render() {
-        let {title , body} = this.props;
+        let { title, body } = this.props;
+        // throw Error('Something went wrong.');
         return (
             <div className="card">
                 <header className="card-header">
@@ -17,7 +18,7 @@ class Card extends Component {
                 </header>
                 <section className="card-body">
                     <p>{body}</p>
-                    <button onClick={this.eventHandler.bind(this , 'xxxx')}>Click</button>
+                    <button onClick={this.eventHandler.bind(this, 'xxxx')}>Click</button>
                 </section>
                 <footer className="card-footer">
                     <p>Card footer</p>

@@ -6,6 +6,22 @@ import Carousel from 'react-bootstrap/Carousel';
 import ErrorBoundary from './components/errors/ErrorBoundary';
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    console.log('[app.js] run constructor')
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('[App.js] run getDerivedStateFromProps')
+    return null;
+  }
+
+  componentDidMount() {
+    console.log('[App.js] run componentDidMount')
+
+  }
+
   state = {
     articles: [
       { id: 1, title: 'article 1', body: 'this is article 1', active: 1 },
@@ -49,7 +65,9 @@ class App extends React.Component {
   }
 
   render() {
-    let articleList = this.state.articles.map((article, index) => article.active ? <ErrorBoundary><Card key={index} title={article.title} body={article.body} /></ErrorBoundary> : null)
+    console.log('[App.js] run render')
+
+    let articleList = this.state.articles.map((article, index) => article.active ? <Card key={index} title={article.title} body={article.body} /> : null)
 
     return (
       <div className="app">
@@ -60,10 +78,10 @@ class App extends React.Component {
               src="https://static.roocket.ir/images/cover/2022/12/7/JGFJLVo6CHKjprsUBylzi0sylSQou31OuP9gn2tW.png"
               alt="First slide"
             />
-            <Carousel.Caption>
+            {/* <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -72,10 +90,10 @@ class App extends React.Component {
               alt="Second slide"
             />
 
-            <Carousel.Caption>
+            {/* <Carousel.Caption>
               <h3>Second slide label</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -84,18 +102,19 @@ class App extends React.Component {
               alt="Third slide"
             />
 
-            <Carousel.Caption>
+            {/* <Carousel.Caption>
               <h3>Third slide label</h3>
               <p>
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
         </Carousel>
 
 
-
-        {articleList}
+        <ErrorBoundary>
+          {articleList}
+        </ErrorBoundary>
         {this.state.loading
           ? <div>Loading ...</div> : null}
         <button

@@ -2,6 +2,21 @@ import React, { Component } from "react";
 import './Card.css'
 
 class Card extends Component {
+    state = {}
+    
+    constructor(props) {
+        super(props);
+        console.log('[Card.js] run constructor')
+    }
+    
+      static getDerivedStateFromProps(props , state) {
+        console.log('[Card.js] run getDerivedStateFromProps')
+        return null;
+      }
+    
+      componentDidMount() {
+        console.log('[Card.js] run componentDidMount')
+      }
 
 
     eventHandler(e) {

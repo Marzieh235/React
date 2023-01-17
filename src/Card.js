@@ -6,14 +6,14 @@ import React from "react";
 
 
 
-function Card(){
+function Card(props){
 return (
     <div className="card">
         <header className="card-header">
-            <h2>Card Title</h2>
+            <h2>{props.title}</h2>
         </header>
         <section className="card-body">
-            <p>LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</p>
+            <p>{props.body}</p>
         </section>
         <footer>
             <p>Card footer</p>

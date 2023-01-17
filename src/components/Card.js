@@ -19,7 +19,7 @@ class Card extends Component {
                     <p>{body}</p>
                     <button onClick={this.eventHandler.bind(this , 'xxxx')}>Click</button>
                 </section>
-                <footer>
+                <footer className="card-footer">
                     <p>Card footer</p>
                 </footer>
             </div>

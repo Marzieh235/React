@@ -17,7 +17,6 @@ import Card from './Card';
   
   root.render(
   <React.StrictMode>
-    <Card />
     <App/>
   </React.StrictMode>
   );

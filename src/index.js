@@ -3,24 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Card from './Card';
 
+// setInterval(() => {
+//   let element =(
+//     <div>
+//       <h1>hello EveryOne</h1>
+//       <p>It is {new Date().toLocaleTimeString()}</p>
+//     </div>
+//   )
 
-setInterval(() => {
-  let element =(
-    <div>
-      <h1>hello EveryOne</h1>
-      <p>It is {new Date().toLocaleTimeString()}</p>
-    </div>
-  )
-
-  const root = ReactDOM.createRoot(element, document.getElementById('root'));
+  const root = ReactDOM.createRoot(document.getElementById('root'));
   
   root.render(
   <React.StrictMode>
-    <App />
+    <Card />
+    <App/>
   </React.StrictMode>
   );
-}, 1000);
+// }, 1000);
 
 
 

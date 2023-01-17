@@ -57,7 +57,7 @@ class App extends React.Component {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://static.roocket.ir/images/cover/2022/12/24/vKOykYokRJ7uU86q4doBLiKSjFWULAPX1mliS3Yt.png"
+              src="https://static.roocket.ir/images/cover/2022/12/7/JGFJLVo6CHKjprsUBylzi0sylSQou31OuP9gn2tW.png"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -68,7 +68,7 @@ class App extends React.Component {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://static.roocket.ir/images/cover/2023/1/12/2zZWXiDLRxHlG8RUuW7HDK8NDQ5T4mMCYHlsRvPE.jpg"
+              src="https://static.roocket.ir/images/cover/2023/1/9/XJhCxoX6Vt3HttTC9TCdNrHKSO5lfSkwrdx9d8xr.jpg"
               alt="Second slide"
             />
 
@@ -80,7 +80,7 @@ class App extends React.Component {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://static.roocket.ir/images/cover/2023/1/14/vbohNtmAhcdUr4sk5aj1xyNZLVFYTwFo9YTGbuP2.jpg"
+              src="https://static.roocket.ir/images/cover/2022/3/5/Vgvs8x7NuDYduPQO0unTb7Lfq2qo5y5ZrnhnBM9t.jpg"
               alt="Third slide"
             />
 

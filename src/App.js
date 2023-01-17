@@ -13,13 +13,7 @@ class App extends React.Component {
     ],
     title : 'this is roocket',
     loading : false,
-    btnStyle : { 
-      backgroundColor : 'rgba(0,0,0,.8)',
-      padding : '10px 25px' ,
-      color : 'white' ,
-      border : 'none' ,
-      borderRadius : '3px'
-    }
+    btnHover : false
   }
 
   loadMore = () => {
@@ -42,42 +36,35 @@ class App extends React.Component {
   }
   
   mosueEnter = (e) => {
-    console.log({
-      ...this.state.btnStyle,
-      backgroundColor : 'rgba(0,0,0,.5)'
-    })
-    this.setState(prevState => {
-      return {
-        btnStyle : {
-          ...prevState.btnStyle,
-          backgroundColor : 'rgba(0,0,0,.5)'
-        }
-      }
+    this.setState({
+      btnHover : true
     })
   }
 
   mosueLeave = (e) => {
-    this.setState(prevState => {
-      return {
-        btnStyle : {
-          ...prevState.btnStyle,
-          backgroundColor : 'rgba(0,0,0,.8)'
-        }
-      }
+    this.setState({
+      btnHover : false
     })
-
   }
 
   render() {
     let articleList = this.state.articles.map((article , index) => article.active ? <Card key={index} title={article.title} body={article.body} /> : null)
+    // let btnclasses = ['btn-more']
 
+    // if(this.state.btnHover) {
+    //   btnclasses.push('active')
+    // }
+
+    // console.log(btnclasses)
     return (
       <div className="app">
         { articleList  }
         { this.state.loading 
              ? <div>Loading ...</div> : null }
         <button 
-          style={this.state.btnStyle} onClick={this.loadMore} 
+          className={`btn-more ${this.state.btnHover ? 'active' : ''}`}
+          // className={btnclasses.join(' ')}
+          onClick={this.loadMore} 
           onMouseEnter={this.mosueEnter}
           onMouseLeave={this.mosueLeave} 
 

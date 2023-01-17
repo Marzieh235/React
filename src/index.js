@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Card from './Card';
+// import Card from './components/Card.js';
 
 // setInterval(() => {
 //   let element =(

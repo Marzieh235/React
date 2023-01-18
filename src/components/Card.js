@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './Card.css'
 import { Card, Button } from 'react-bootstrap';
 
-class CardItem extends Component {
+class CardItem extends PureComponent {
     state = {}
     
     constructor(props) {
@@ -13,14 +13,6 @@ class CardItem extends Component {
       static getDerivedStateFromProps(props , state) {
         console.log('[Card.js] run getDerivedStateFromProps')
         return null;
-      }
-
-      shouldComponentUpdate(props , state) {
-          if(props.title !== this.props.title || props.body !== this.props.body) {
-              return true;
-          }
-
-          return false;
       }
     
       componentDidMount() {

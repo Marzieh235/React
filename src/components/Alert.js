@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './Card.css'
 import { Alert, Button } from 'react-bootstrap';
 
-class AlertComponent extends Component {
+class AlertComponent extends PureComponent {
     state = {}
 
     constructor(props) {
@@ -13,13 +13,6 @@ class AlertComponent extends Component {
     static getDerivedStateFromProps(props , state) {
         console.log('[Alert.js] run getDerivedStateFromProps')
         return null;
-    }
-
-    shouldComponentUpdate(props , state) {
-        console.log('[Alert.js] run shouldComponentUpdate')
-        if(props.show !== this.props.show)
-            return true;
-        return false;
     }
 
     componentDidMount() {

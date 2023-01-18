@@ -17,7 +17,9 @@ class AlertComponent extends Component {
 
     shouldComponentUpdate(props , state) {
         console.log('[Alert.js] run shouldComponentUpdate')
-        return true;
+        if(props.show !== this.props.show)
+            return true;
+        return false;
     }
 
     componentDidMount() {
@@ -36,6 +38,8 @@ class AlertComponent extends Component {
   
 
     render() {
+        console.log('[Alert.js] run render')
+
         let { show , setShow } = this.props;
    
         return (

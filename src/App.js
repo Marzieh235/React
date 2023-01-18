@@ -18,14 +18,12 @@ class App extends React.Component {
   }
 
   shouldComponentUpdate(props , state) {
-    console.log(props , state);
     console.log('[App.js] run shouldComponentUpdate')
 
     return true;
   }
 
   getSnapshotBeforeUpdate(props , state) {
-      console.log(props , state);
       console.log('[App.js] run getSnapshotBeforeUpdate')
       return null;
   }
@@ -90,7 +88,6 @@ class App extends React.Component {
   }
 
   setShow(status) {
-    console.log(status , this);
     this.setState(prevState => {
       return {
         alert : {

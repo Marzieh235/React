@@ -3,20 +3,27 @@ import './Card.css'
 
 class Card extends Component {
     state = {}
-    
+
     constructor(props) {
         super(props);
         console.log('[Card.js] run constructor')
     }
-    
-      static getDerivedStateFromProps(props , state) {
+
+    static getDerivedStateFromProps(props, state) {
         console.log('[Card.js] run getDerivedStateFromProps')
         return null;
-      }
-    
-      componentDidMount() {
+    }
+
+    shouldComponentUpdate(props, state) {
+        console.log(props, state);
+        console.log('[Card.js] run shouldComponentUpdate')
+
+        return true;
+    }
+
+    componentDidMount() {
         console.log('[Card.js] run componentDidMount')
-      }
+    }
 
 
     eventHandler(e) {

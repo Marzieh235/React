@@ -17,9 +17,29 @@ class App extends React.Component {
     return null;
   }
 
+  shouldComponentUpdate(props, state) {
+    console.log(props, state);
+    console.log('[App.js] run shouldComponentUpdate')
+
+    return true;
+  }
+  getSnapshotBeforeUpdate(props, state) {
+    console.log(props, state);
+    console.log('[App.js] run getSnapshotBeforeUpdate')
+    return null;
+  }
+
+  componentDidUpdate(props, state, snapshot) {
+    console.log('[App.js] run componentDidUpdate')
+  }
+
   componentDidMount() {
     console.log('[App.js] run componentDidMount')
-
+    setTimeout(() => {
+      this.setState((state, props) => ({
+        articles: [...state.articles, { id: 4, title: 'article 4', body: 'this is article 4', active: 1 }]
+      }))
+    }, 3000);
   }
 
   state = {

@@ -1,4 +1,4 @@
-import React, { PureComponent , useState ,useEffect } from 'react'
+import React, { PureComponent , useState , useEffect } from 'react'
 import './Card.css'
 import { Alert, Button } from 'react-bootstrap';
 
@@ -65,10 +65,14 @@ function AlertComponent(props) {
 
     const [show , setShow] = useState(true)
 
-
-    useEffect(()=>{
+    useEffect(() => {
         console.log('[Alert.js] run useEffect')
     })
+
+    useEffect(() => {
+        console.log('[Alert.js] run useEffect as mounting')
+    },[])
+
     return (
         <>
             <Alert show={show} variant="success">

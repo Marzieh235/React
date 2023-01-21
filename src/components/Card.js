@@ -23,11 +23,14 @@ class CardItem extends PureComponent {
         console.log(this)
     }
 
+    componentWillUnmount() {
+        console.log('[Card.js] run componentWillUnmount')
+    }
 
     render() {
         console.log('[Card.js] run render')
 
-        let {title , body} = this.props;
+        let { id , title , body , deleteArticle } = this.props;
         return (
             <Card>
                 <Card.Header as="h4">{title}</Card.Header>
@@ -37,6 +40,8 @@ class CardItem extends PureComponent {
                 </Card.Body>
                 <Card.Footer>
                     <p>Card Footer</p>
+                    <Button onClick={() => deleteArticle(id)} className="btn-danger">delete</Button>
+                
                 </Card.Footer>
             </Card>
         )

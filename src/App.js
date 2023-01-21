@@ -97,10 +97,19 @@ class App extends React.Component {
     })
   }
 
+  deleteArticle(articleId) {
+    this.setState(prevState => {
+
+      return {
+        articles : prevState.articles.filter(article => article.id !== articleId)
+      }
+    })
+  }
+
   render() {
     console.log('[App.js] run render')
     
-    let articleList = this.state.articles.map((article , index) => article.active ? <CardItem key={index} title={article.title} body={article.body} /> : null)
+    let articleList = this.state.articles.map((article , index) => article.active ? <CardItem key={index} id={article.id} title={article.title} body={article.body} deleteArticle={this.deleteArticle.bind(this)}/> : null)
     let btnclasses = ['btn-more']
 
     if(this.state.btnHover) {

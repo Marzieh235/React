@@ -109,7 +109,7 @@ class App extends React.Component {
   render() {
     console.log('[App.js] run render')
     
-    let articleList = this.state.articles.map((article , index) => article.active ? <CardItem key={index} id={article.id} title={article.title} body={article.body} deleteArticle={this.deleteArticle.bind(this)}/> : null)
+    let articleList = this.state.articles.map((article , index) => article.active ? <CardItem key={index} article={article} deleteArticle={this.deleteArticle.bind(this)}/> : null)
     let btnclasses = ['btn-more']
 
     if(this.state.btnHover) {

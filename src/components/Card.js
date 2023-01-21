@@ -34,13 +34,10 @@ import { Card, Button } from 'react-bootstrap';
 // }
 
 function CardItem(props) {
-    // useEffect(() => {
-    //     console.log('[Card.js] run useEffect')
+    useEffect(() => {
+        console.log('[Card.js] run useEffect')
 
-    //     return () => {
-    //         console.log('[Card.js] run useEffect as unmounting')
-    //     }
-    // })
+    })
 
     useEffect(() => {
         console.log('[Card.js] run useEffect as mounting')
@@ -50,16 +47,16 @@ function CardItem(props) {
         }
     },[])
 
-    let { id , title , body , deleteArticle } = props;
+    let { article , deleteArticle } = props;
     return (
         <Card>
-            <Card.Header as="h4">{title}</Card.Header>
+            <Card.Header as="h4">{article.title}</Card.Header>
             <Card.Body>
-                <Card.Text>{body}</Card.Text>
+                <Card.Text>{article.body}</Card.Text>
             </Card.Body>
             <Card.Footer>
                 <p>Card Footer</p>
-                <Button onClick={() => deleteArticle(id)} className="btn-danger">delete</Button>
+                <Button onClick={() => deleteArticle(article.id)} className="btn-danger">delete</Button>
             
             </Card.Footer>
         </Card>

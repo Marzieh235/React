@@ -61,9 +61,9 @@ import { Alert, Button } from 'react-bootstrap';
 
 
 function AlertComponent(props) {
-    // let { show , setShow } = props; 
+    let { show , setShow } = props; 
 
-    const [show , setShow] = useState(true)
+    // const [show , setShow] = useState(true)
 
     useEffect(() => {
         console.log('[Alert.js] run useEffect')
